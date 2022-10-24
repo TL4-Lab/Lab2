@@ -4,7 +4,7 @@ close all;
 n = 0:2;
 w = -3*pi: 1/20 *pi :3*pi;
 h_1 = 1/4 * impulse(0,n) + 1/2 * impulse(1,n) + 1/4 * impulse(2,n);
-h_2 = -1/4 * impulse(0,n) + 1/2 * impulse(1,n) - 1/4 * impulse(2,n);
+h_2 = -1/4 * impulse(0,n) + 1/2 * impulse(1,n) - 1/4 * impulse(2,n) + 0.3 * imp;
 
 figure()
 stem(n,h_1);

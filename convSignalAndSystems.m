@@ -6,19 +6,27 @@ close all;
 [impr, impr_fs] = audioread('impr.wav');
 figure()
 plot(impr);
-%soundsc(impr);
+title("impr.wav Waveform");
+xlabel("Samples ("+ num2str(impr_fs)+"Hz Sampling Frequency)");
+ylabel("Amplitude");
+
+%soundsc(impr, impr_fs);
 
 %Part C
 [y,oily_fs] = audioread("oilyrag.wav");
 figure();
 plot(y);
-%soundsc(y);
+title("oilyrag.wav Waveform");
+xlabel("Samples ("+ num2str(oily_fs)+"Hz Sampling Frequency)");
+ylabel("Amplitude");
+%soundsc(y, oily_fs);
 
 convSignal = conv(impr,y);
 
 figure();
 plot(convSignal);
-ylabel("Amplitude")
-xlabel("Time Steps")
+title("Convolution of oilyrag.wav and impr.wav Waveform");
+xlabel("Samples ("+ num2str(oily_fs)+"Hz Sampling Frequency)");
+ylabel("Amplitude");
 
-soundsc(convSignal);
+soundsc(convSignal, oily_fs);
